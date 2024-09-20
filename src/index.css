@@ -1,13 +1,306 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #374151;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  /* justify-content: center; */
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.title {
+  color: #637080;
+  font-size: 2.9rem;
+  font-style: oblique;
+
+  font-weight: 700;
+}
+
+.text {
+  width: 35%;
+  height: 25px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 1.5rem;
+
+  outline: none;
+  border: none;
+  margin-right: 1rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+.picker {
+  border: none;
+  outline: none;
+}
+.task {
+  color: #6b727c;
+}
+.list {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 60%;
+  max-width: 100%;
+  float: right;
+  margin-right: 19rem;
+
+  text-align: left;
+}
+.list > ul > li {
+  list-style: none;
+  font-size: 1.5rem;
+  border: 2px solid black;
+  margin-top: 1.2rem;
+  background-color: #111827;
+  border-radius: 15px;
+  color: white;
+}
+.list > ul > li {
+  padding: 1rem;
+}
+
+.react-datepicker__input-container input {
+  border: none;
+  outline: none;
+
+  color: #999;
+  font-size: 16px;
+  padding: 10px;
+
+  background-color: #374151;
+  background: #fff;
+  color: #333;
+}
+
+.react-datepicker__input-container input::placeholder {
+  color: #333;
+  font-style: italic;
+  text-align: center;
+  background: #fff;
+}
+.button-container {
+  background-color: #374151;
+  display: flex;
+  gap: 0.4rem;
+  border: none;
+  outline: none;
+}
+.button-container > button {
+  padding: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  background: #374151;
+
+  color: #fff;
+}
+.calendar {
+  border: none;
+  outline: none;
+
+  background-color: #374151;
+  display: flex;
+  align-items: center;
+}
+.react-datepicker__input-container {
+  width: 10%;
+}
+.addtask {
+  width: 7%;
+  height: 33px;
+  position: relative;
+  left: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  background: linear-gradient(to right, #b14ba0, #f8a1b6);
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 5px;
+}
+.list > ul > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 25px;
+
+  width: 100%;
+  max-width: 100%;
+}
+.list > ul > li > .item {
+  color: #53eaff;
+}
+.date {
+  color: #16dd17;
+}
+.list > ul > li > .item,
+.date {
+  font-size: 1.4rem;
+
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.list > ul > li > button {
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 6%;
+}
+.btn {
+  width: 40%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.2rem;
+}
+.btn > button {
+  padding: 0.2rem;
+
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn > button:hover {
+  transform: scale(1.05);
+}
+.newText {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ec488a;
+  font-size: 1.4rem;
+}
+.checker {
+  margin-top: 1rem;
+  margin-right: 18rem;
+  color: #ff1e56;
+  font-size: 1.9rem;
+}
+.btn > .edit {
+  color: #b76ccf;
+}
+.btn > .save {
+  color: #b76ccf;
+}
+.btn > .delete {
+  color: #e61a4a;
+}
+.date-button {
+  /* border: none; */
+  outline: none;
+}
+
+@media screen and (max-width: 1115px) {
+  .addtask {
+    width: 9%;
+    font-size: 0.9rem;
+  }
+  .btn {
+    width: 67%;
+  }
+  .list {
+    width: 70%;
+    /* font-size: 0.8rem; */
+    margin-right: 12rem;
+  }
+  .list > ul > li {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 661px) {
+  .addtask {
+    width: 12%;
+  }
+  .btn {
+    width: 77%;
+    font-size: 0.2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .list {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 886px) {
+  .list > ul {
+    font-size: 0.9rem;
+  }
+
+  .list {
+    width: 70%;
+    /* margin-right: 12rem; */
+  }
+  .list > ul > li > .item,
+  .date {
+    font-size: 1.4rem;
+  }
+
+  /* .btn > button {
+    font-size: 1.4rem;
+  } */
+  .list > ul > li {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 766px) {
+  .list {
+    width: 75%;
+    margin-right: 7rem;
+  }
+}
+@media screen and (max-width: 561px) {
+  .add {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .addtask {
+    margin-right: 1.4rem;
+    width: 16%;
+  }
+  .text {
+    width: 70%;
+  }
+  .newText {
+    width: 70%;
+  }
+  .list {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5rem;
+  }
+  .date {
+    font-size: 1.2rem;
+    margin-left: 0.9rem;
+  }
 }
